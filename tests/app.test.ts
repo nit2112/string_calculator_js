@@ -1,4 +1,4 @@
-const StringCalculator = require('../src/app');
+const StringCalculator = require('../src/app.ts');
 
 describe('App.add', () => {
   test('returns 0 for empty string', () => {
