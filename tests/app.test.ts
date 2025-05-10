@@ -22,6 +22,6 @@ describe('App.add', () => {
   });
 
   test('throw exception for negative number', () => {
-    expect(StringCalculator.add("1, -1")).toThrow("Negative numbers not allowed: -1");
+    expect(() => { StringCalculator.add("1, -1") }).toThrow("Negative numbers not allowed: -1");
   });
 });

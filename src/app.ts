@@ -6,6 +6,9 @@ class App {
 
       input.split(delimeters).map((str) => {
         const number = Number(str.trim())
+        if(number < 0) {
+          throw new Error(`Negative numbers not allowed: ${number}`);
+        }
         result = result + number;
       })
 
