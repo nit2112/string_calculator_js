@@ -1,8 +1,8 @@
 class App {
     static add(input: string) {
       let result = 0;
-      
-      input.split(',').map((str) => {
+
+      input.split(new RegExp([",", "\n"].join('|'), 'g')).map((str) => {
         const number = Number(str.trim())
         result = result + number;
       })
