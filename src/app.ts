@@ -4,13 +4,20 @@ class App {
 
       const delimeters = new RegExp([",", "\n", "//", ";"].join('|'), 'g')
 
+      const negatives: number[] = [];
+
       input.split(delimeters).map((str) => {
         const number = Number(str.trim())
         if(number < 0) {
-          throw new Error(`Negative numbers not allowed: ${number}`);
+          negatives.push(number);
+        } else {
+          result = result + number;
         }
-        result = result + number;
       })
+
+      if(negatives.length > 0) {
+        throw new Error(`Negative numbers not allowed: ${negatives}`);
+      }
 
       return result;
     }
