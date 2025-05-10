@@ -16,4 +16,8 @@ describe('App.add', () => {
   test('allow / delimeter for string "1\n2,3"', () => {
     expect(StringCalculator.add("1\n2,3")).toBe(6);
   });
+
+  test('allow diffrent delimeters for string "//;\n1;2"', () => {
+    expect(StringCalculator.add("//;\n1;2")).toBe(3);
+  });
 });
