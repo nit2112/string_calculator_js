@@ -1,11 +1,12 @@
 class App {
     static add(input: string) {
       let result = 0;
-      if(input === "1") {
-        result = 1;
-      } else if(input === "1, 5") {
-        result = 6;
-      }
+      
+      input.split(',').map((str) => {
+        const number = Number(str.trim())
+        result = result + number;
+      })
+
       return result;
     }
   }
