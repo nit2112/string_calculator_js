@@ -20,4 +20,8 @@ describe('App.add', () => {
   test('allow diffrent delimeters for string "//;\n1;2"', () => {
     expect(StringCalculator.add("//;\n1;2")).toBe(3);
   });
+
+  test('throw exception for negative number', () => {
+    expect(StringCalculator.add("1, -1")).toThrow("Negative numbers not allowed: -1");
+  });
 });
