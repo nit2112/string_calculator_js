@@ -12,4 +12,8 @@ describe('App.add', () => {
   test('returns 6 for string 1, 5', () => {
     expect(StringCalculator.add("1, 5")).toBe(6);
   });
+
+  test('allow / delimeter for string "1\n2,3"', () => {
+    expect(StringCalculator.add("1\n2,3")).toBe(6);
+  });
 });
